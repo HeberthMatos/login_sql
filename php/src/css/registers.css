@@ -1,0 +1,273 @@
+:root {
+    /* Cores do tema Northern Lights */
+    --menu-background: #164773;
+    /* Northern Lights 1 */
+    --menu-background-link: #0B2B40;
+    /* Northern Lights 2 */
+    --menu-text-color: #ffffff;
+    /* Branco para o texto do menu */
+    --menu-hover-background: #1E5959;
+    /* Northern Lights 3 */
+    --form-background: #fff;
+    /* Cor de fundo do formulário */
+    --input-border-color: #ccc;
+    /* Cor da borda dos inputs */
+    --modal-background: rgba(0, 0, 0, 0.4);
+    /* Cor de fundo do modal */
+    --modal-content-background: #fefefe;
+    /* Cor de fundo do conteúdo do modal */
+    --modal-border-color: #888;
+    /* Cor da borda do modal */
+    --table-border-color: #ddd;
+    /* Cor da borda da tabela */
+    --table-header-background: #f2f2f2;
+    /* Cor de fundo do cabeçalho da tabela */
+    --button-background: #3B8C6E;
+    /* Northern Lights 4 */
+    --button-hover-background: #89D99D;
+    /* Northern Lights 5 */
+}
+
+body {
+    margin: 0;
+    /* Remove margens padrão */
+    box-sizing: border-box;
+    /* Inclui padding e border na largura total */
+    font-family: Arial, sans-serif;
+    /* Fonte da página */
+}
+
+.logo {
+    width: 100%;
+    /* Largura da logo */
+    margin-bottom: 20px;
+    /* Espaço abaixo da logo */
+}
+
+.home-icon {
+    width: 25px;
+    /* Tamanho do ícone de home */
+    vertical-align: middle;
+    /* Alinha o ícone ao meio do texto */
+}
+
+.container {
+    display: flex;
+    /* Usa flexbox para layout */
+}
+
+/* Menu lateral fixo */
+.menu-lateral {
+    background-color: var(--menu-background);
+    /* Cor de fundo do menu lateral */
+    color: var(--menu-text-color);
+    /* Cor do texto do menu */
+    align-items: flex-start;
+    /* Alinhamento dos itens do menu */
+    padding: 20px;
+    /* Preenchimento interno do menu */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra leve para o menu */
+    width: 250px;
+    /* Largura do menu lateral */
+    height: 100%;
+    /* Altura do menu lateral */
+    position: fixed;
+    /* Mantém o menu fixo */
+}
+
+.menu-lateral a {
+    display: block;
+    /* Exibe links como blocos */
+    color: var(--menu-text-color);
+    /* Cor do texto dos links */
+    background: var(--menu-background-link);
+    text-decoration: none;
+    /* Remove sublinhado dos links */
+    margin-bottom: 15px;
+    /* Espaço abaixo de cada link */
+    font-size: 18px;
+    /* Tamanho da fonte dos links */
+    font-weight: bold;
+    /* Negrito para os links */
+    padding: 10px 15px;
+    /* Adiciona padding para links */
+    border-radius: 5px;
+    /* Borda arredondada nos links */
+    transition: background-color 0.3s;
+    /* Transição suave ao passar o mouse */
+}
+
+.menu-lateral a:hover {
+    background-color: var(--menu-hover-background);
+    /* Cor de fundo ao passar o mouse */
+}
+
+.form-container {
+    width: 400px;
+    background-color: var(--form-background);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px 30px;
+    margin: 0 auto;
+    /* Centraliza o formulário */
+    margin-top: 40px;
+}
+
+.title {
+    text-align: center;
+    font-size: 24px;
+    /* Tamanho do título do formulário */
+    font-weight: 800;
+    color: var(--menu-background);
+    /* Usando Northern Lights 1 */
+}
+
+.input-container {
+    margin-bottom: 15px;
+}
+
+.input {
+    border-radius: 20px;
+    border: 1px solid var(--input-border-color);
+    outline: 0 !important;
+    box-sizing: border-box;
+    padding: 12px 15px;
+    width: 100%;
+    /* Ajusta a largura do input */
+}
+
+.form-btn {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 0 !important;
+    outline: 0 !important;
+    background: var(--button-background);
+    /* Northern Lights 4 */
+    color: white;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 100%;
+    /* Ajusta a largura do botão */
+    transition: background-color 0.3s;
+    /* Transição suave para a cor de fundo */
+}
+
+.form-btn:hover {
+    background: var(--button-hover-background);
+    /* Northern Lights 5 */
+}
+
+.alert-success {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.alert-danger {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.modal {
+    display: none;
+    /* Escondido por padrão */
+    position: fixed;
+    width: 100%;
+    /* Largura total */
+    height: 100%;
+    /* Altura total */
+    overflow: auto;
+    /* Se necessário, adiciona rolagem */
+    background-color: rgb(0, 0, 0);
+    /* Fallback */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Com opacidade */
+}
+
+.modal-content {
+    background-color: var(--modal-content-background);
+    margin: 15% auto;
+    /* 15% da parte superior e centralizado */
+    padding: 20px;
+    border: 1px solid var(--modal-border-color);
+    width: 80%;
+    /* Largura do modal */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo da tabela dentro do modal */
+#client-table {
+    width: 100%;
+    /* Largura total da tabela */
+    border-collapse: collapse;
+    /* Colapsa bordas de células adjacentes */
+    margin-top: 20px;
+    /* Espaço acima da tabela */
+}
+
+#client-table th,
+#client-table td {
+    border: 1px solid var(--table-border-color);
+    /* Borda para células */
+    padding: 10px;
+    /* Preenchimento interno para células */
+    text-align: left;
+    /* Alinhamento do texto à esquerda */
+}
+
+#client-table th {
+    background-color: var(--table-header-background);
+    /* Cor de fundo do cabeçalho da tabela */
+    font-weight: bold;
+    /* Negrito para o texto do cabeçalho */
+}
+
+#client-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+    /* Cor de fundo para linhas pares */
+}
+
+#client-table tr:hover {
+    background-color: #f1f1f1;
+    /* Cor de fundo ao passar o mouse */
+}
+
+#client-table button {
+    background-color: var(--button-background);
+    /* Northern Lights 4 */
+    color: white;
+    /* Cor do texto dos botões */
+    border: none;
+    /* Remove borda dos botões */
+    padding: 5px 10px;
+    /* Preenchimento interno dos botões */
+    border-radius: 5px;
+    /* Borda arredondada nos botões */
+    cursor: pointer;
+    /* Cursor de ponteiro para indicar clicável */
+    transition: background-color 0.3s;
+    /* Transição suave para a cor de fundo */
+}
+
+#client-table button:hover {
+    background-color: var(--button-hover-background);
+    /* Northern Lights 5 */
+}

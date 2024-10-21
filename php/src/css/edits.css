@@ -1,0 +1,120 @@
+:root {
+    /* Cores do tema Northern Lights */
+    --menu-background: #164773;
+    /* Northern Lights 1 */
+    --menu-background-link: #0B2B40;
+    /* Northern Lights 2 */
+    --menu-text-color: #ffffff;
+    /* Branco para o texto do menu */
+    --menu-hover-background: #1E5959;
+    /* Northern Lights 3 */
+    --form-background: #fff;
+    /* Cor de fundo do formulário */
+    --input-border-color: #ccc;
+    /* Cor da borda dos inputs */
+    --modal-background: rgba(0, 0, 0, 0.4);
+    /* Cor de fundo do modal */
+    --modal-content-background: #fefefe;
+    /* Cor de fundo do conteúdo do modal */
+    --modal-border-color: #888;
+    /* Cor da borda do modal */
+    --table-border-color: #ddd;
+    /* Cor da borda da tabela */
+    --table-header-background: #f2f2f2;
+    /* Cor de fundo do cabeçalho da tabela */
+    --button-background: #3B8C6E;
+    /* Northern Lights 4 */
+    --button-hover-background: #89D99D;
+    /* Northern Lights 5 */
+}
+
+body {
+    margin: 0;
+    /* Remove margens padrão */
+    box-sizing: border-box;
+    /* Inclui padding e border na largura total */
+    font-family: Arial, sans-serif;
+    /* Fonte da página */
+    display: flex;
+    /* Usar flexbox para o alinhamento do formulário */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    height: 100vh;
+    /* Altura da tela inteira */
+    background-color: #f9f9f9;
+    /* Fundo da página */
+}
+
+form {
+    width: 500px;
+    /* Largura do formulário */
+    background-color: var(--form-background);
+    /* Cor de fundo do formulário */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* Sombra leve */
+    border-radius: 10px;
+    /* Borda arredondada */
+    padding: 30px;
+    /* Preenchimento interno do formulário */
+}
+
+label {
+    font-weight: bold;
+    /* Negrito para os rótulos */
+    margin-top: 10px;
+    /* Espaço acima dos rótulos */
+}
+
+input[type="text"] {
+    border-radius: 20px;
+    /* Bordas arredondadas */
+    border: 1px solid var(--input-border-color);
+    /* Borda do input */
+    outline: 0 !important;
+    /* Remove contorno padrão */
+    box-sizing: border-box;
+    /* Inclui padding e border na largura total */
+    padding: 12px 15px;
+    /* Preenchimento interno */
+    width: 100%;
+    /* Largura total */
+    margin-top: 10px;
+    /* Espaço acima do input */
+}
+
+.button-container {
+    display: flex;
+    /* Usa flexbox para os botões */
+    justify-content: space-between;
+    /* Espaço entre os botões */
+    margin-top: 20px;
+    /* Espaço acima dos botões */
+}
+
+.btn {
+    background-color: var(--button-background);
+    /* Cor de fundo do botão */
+    color: white;
+    /* Cor do texto do botão */
+    border: none;
+    /* Remove borda */
+    border-radius: 20px;
+    /* Bordas arredondadas */
+    padding: 10px 15px;
+    /* Preenchimento interno */
+    cursor: pointer;
+    /* Cursor de ponteiro */
+    transition: background-color 0.3s;
+    /* Transição suave para a cor de fundo */
+    font-weight: bold;
+    /* Negrito para o texto do botão */
+    width: 48%;
+    /* Largura do botão */
+}
+
+.btn:hover {
+    background-color: var(--button-hover-background);
+    /* Cor ao passar o mouse */
+}

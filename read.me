@@ -1,0 +1,25 @@
+"criar tabela clientes"
+
+CREATE TABLE clientes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    telefone VARCHAR(15) NOT NULL,
+    endereco VARCHAR(255) NOT NULL
+);
+
+"deixar um user_id para cada user, assim o cliente só vai aparecer para o user cadastrado"
+
+ALTER TABLE clientes ADD COLUMN user_id INT;
+
+"criar tabela users"
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(11) NOT NULL,
+    password VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+"Adicionar uma coluna para quando o usuario alterar a senha uma vez, não precise mais"
+
+ALTER TABLE users ADD COLUMN password_reset_done TINYINT DEFAULT 0;

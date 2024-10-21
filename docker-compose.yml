@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  php-apache-environment:
+    container_name: php-apache
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    volumes:
+      - ./php/src:/var/www/html/
+    ports:
+      - 8000:80
+    environment:
+      MYSQL_HOST: db
+      MYSQL_USER: HEBERTH
+      MYSQL_PASSWORD: BIBI7979DB
+      MYSQL_DATABASE: LOGIN_DB
+
+  db:
+    container_name: db
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ADMIN
+      MYSQL_DATABASE: LOGIN_DB
+      MYSQL_USER: HEBERTH
+      MYSQL_PASSWORD: BIBI7979DB
+    ports:
+      - "9906:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql  # Para persistência dos dados
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - '8070:80'
+    restart: always
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: ADMIN
+    depends_on:
+      - db
