@@ -44,12 +44,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register_client'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register_user'])) {
     $username = $_POST['username'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Criptografa a senha
+    
     // Verifica se o nome de usuário já existe
     $check_sql = "SELECT id FROM users WHERE username = ?";
     $stmt_check = $mysqli->prepare($check_sql);
     $stmt_check->bind_param("s", $username);
     $stmt_check->execute();
     $stmt_check->store_result();
+    
     if ($stmt_check->num_rows > 0) {
         // Se o usuário já estiver cadastrado
         $_SESSION['error_user'] = "Usuário já cadastrado!";
@@ -58,13 +60,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register_user'])) {
         $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
         $stmt = $mysqli->prepare($sql);
         $stmt->bind_param("ss", $username, $password);
-        $_SESSION['success_user'] = "Usuário cadastrado com sucesso!";
+        
+        if ($stmt->execute()) {
+            $_SESSION['success_user'] = "Usuário cadastrado com sucesso!";
+        }
     }
 
     // Redireciona para a mesma página para evitar reenvio
     header("Location: " . $_SERVER['PHP_SELF']);
     exit(); // Para garantir que o script pare aqui
 }
+
 
 // Processar a pesquisa de clientes
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['search_submit'])) {
